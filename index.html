@@ -1,187 +1,270 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Template</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HTML Email</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+			background-color: #cccccc;
+		}
+		table {
+			border-spacing: 0;
+		}
+		td {
+			padding: 0;
+		}
+		img {
+			border: 0;
+		}
+
+        .wrapper {
+            width: 100%;
+            table-layout: fixed;
+            background-color: #cccccc;
+            padding: 10px 0 40px 0;
+        }
+
+        .main {
+            margin: 0 auto;
+            width: 100%;
+            max-width: 600px;
+            background-color: #fff;
+            border-spacing: 0;
+            font-family: sans-serif;
+            color: #4a4a4a;
+        }
+
+        .title {
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .logotype {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon {
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+        }
+        .logo-name {
+            font-size: 35px;
+            font-weight: 900;
+            white-space: nowrap;
+            font-family: 'Merriweather', serif;
+        }
+        .header {
+            background-color: #fff;
+            padding: 2rem;
+
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .notif {
+            display: flex;
+            flex-direction: column;
+           
+            padding-bottom: 4rem;
+            border-bottom: 1px solid #aaa;
+        }
+        .notif h1 {
+            text-align: center;
+        }
+
+        .notif p {
+            font-size: 18px;
+            margin-block: 1rem;
+        }
+
+        .socials a {
+            padding: 4px;
+            background-color: #f0e7fa;
+            border-radius: 50%;
+        }
+
+        .logo-icon-2 {
+            width: 35px;
+            height: 35px;
+        }
+
+
+        .logo-name-2 {
+            font-size: 25px;
+        }
+
+
+
+        .socials {
+            display: flex;
+            gap: .5rem;
+        }
+        .socials li {
+            list-style: none;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            font-size: 18px;
+            color: rgba(73, 80, 87, .7);
+        }
+        .content-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Media Query */
+
+		@media screen and (max-width: 600px) {
+
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+            }
+            .logo-icon-2 {
+                width: 25px;
+                height: 25px;
+            }
+            .header {
+                width: 75%;
+            }
+            .notif {
+                gap: 1rem;
+                padding-bottom: 3rem;
+            }
+            .notif h1 {
+                font-size: 22px;
+            }
+            .notif p {
+                font-size: 16px;
+            }
+
+            /* .socials {
+                gap: 5px;
+            } */
+
+            .content {
+                gap: 1.5rem;
+                font-size: 16px;
+            }
+            .content-details {
+                gap: 1.5rem;
+            }
+            .logo-name {
+                font-size: 30px;
+            }
+            .logo-name-2 {
+                font-size: 20px;
+            }
+
+		}
+	</style>
 </head>
-
-<style type="text/css">
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap');
-* {
-	margin: 0;
-	border: 0;
-	padding: 0;
-}
-body {
-    font-size: 18px;
-    background-color: #f0e7fa;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 2%;
-}
-.title {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    
-}
-
-.logotype {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.logo-icon {
-    color: #fff;
-    text-align: center;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-}
-.logo-icon-2 {
-    width: 35px;
-    height: 35px;
-}
-
-.logo-name {
-    font-size: 35px;
-    font-weight: 900;
-    white-space: nowrap;
-    font-family: 'Merriweather', serif;
-}
-.logo-name-2 {
-    font-size: 25px;
-}
-
-.main {
-    background-color: #fff;
-    box-shadow: 0 0 10px #666;
-    width: 60%;
-    margin: 2rem auto;
-    padding: 2rem 2rem 4rem 2rem;
-
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-.notif {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    border-bottom: 1px solid #aaa;
-    padding-bottom: 4rem;
-}
-.notif h1 {
-    text-align: center;
-}
-
-.notif p {
-    font-size: 18px;
-}
-
-.socials {
-    display: flex;
-    gap: .5rem;
-}
-.socials li {
-    list-style: none;
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    font-size: 18px;
-    color: rgba(73, 80, 87, .7);
-}
-.content-details {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-@media screen and (max-width: 600px) {
-    .mine {
-    }
-
-    .logo-icon {
-        width: 35px;
-        height: 35px;
-    }
-    .logo-icon-2 {
-        width: 25px;
-        height: 25px;
-    }
-    .main {
-        width: 75%;
-    }
-    .notif {
-        gap: 1rem;
-        padding-bottom: 3rem;
-    }
-    .notif h1 {
-        font-size: 22px;
-    }
-    .notif p {
-        font-size: 16px;
-    }
-    .socials {
-        gap: 5px;
-    }
-    .content {
-        gap: 1.5rem;
-        font-size: 16px;
-    }
-    .content-details {
-        gap: 1.5rem;
-    }
-    .logo-name {
-        font-size: 30px;
-    }
-    .logo-name-2 {
-        font-size: 20px;
-    }
-}
-
-
-</style>
 
 
 <body>
-    <div class="title">
-        <div class="logotype">
-            <svg class="logo-icon" viewBox="-2.4 -2.4 28.80 28.80" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2 22H22" stroke="#14427b" stroke-width="2.016" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M9.75 4V22H14.25V4C14.25 2.9 13.8 2 12.45 2H11.55C10.2 2 9.75 2.9 9.75 4Z" stroke="#14427b" stroke-width="2.016" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="0.4" d="M3 10V22H7V10C7 8.9 6.6 8 5.4 8H4.6C3.4 8 3 8.9 3 10Z" stroke="#14427b" stroke-width="2.016" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="0.4" d="M17 15V22H21V15C21 13.9 20.6 13 19.4 13H18.6C17.4 13 17 13.9 17 15Z" stroke="#14427b" stroke-width="2.016" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-            <span class="logo-name">Wealth Nexus.</span>
-        </div>
-    </div>
+    <center class="wrapper">
 
-    <div class="main">
-        <div class="notif">
-            <h1>Transaction Notification</h1>
-            <p>Hi <span>full name</span></p>
-            <p> You just made a Transaction of ...</p>
-            <p>Love,</p>
-            <p>The wealth Nexus Team.</p>
-        </div>
-        <div class="socials">
-            <li><a href=""><img width="35px" height="35px" src="https://firebasestorage.googleapis.com/v0/b/vote-component.appspot.com/o/facebook.png?alt=media&token=831fb175-7028-4f50-addb-51cf67e6917e" alt=""></a></li>
-            <li><a href=""><img width="35px" height="35px" src="https://firebasestorage.googleapis.com/v0/b/vote-component.appspot.com/o/instagram.png?alt=media&token=4f779945-6afa-48bc-b77a-d4df6bc1aa58"alt=""></a></li>
-            <li><a href=""><img width="35px" height="35px" src="https://firebasestorage.googleapis.com/v0/b/vote-component.appspot.com/o/whatsapp-svgrepo-com.svg?alt=media&token=f2699821-b074-4f27-97b3-00bc94ac737b" alt=""></a></li>
-            <li><a href=""><img width="35px" height="35px" src="https://firebasestorage.googleapis.com/v0/b/vote-component.appspot.com/o/twitter.png?alt=media&token=51cb6c50-a69a-4fe5-8f82-903b4d55e17b" alt=""></a></li>
-        </div>
-        <div class="content">
-            <div class="copyright"> &copy;  2023 Wealth Nexus Ltd (Company No. 11472232). All rights reserved.</div>
-            <div class="content-details">
-                <p>Nigerian banking services offered by Kuda Microfinance Bank (RC796975) with registered address at 151 - Herbert Macaulay Way, Yaba, Lagos, Nigeria. Kuda Microfinance Bank is licensed by the Central Bank of Nigeria. All Deposits are insured by the Nigerian Deposit Insurance Corporation (NDIC).</p>
-                <p>Nigerian banking services offered by Kuda Microfinance Bank (RC796975) with registered address at 151 - Herbert Macaulay Way, Yaba, Lagos, Nigeria. Kuda Microfinance Bank is licensed by the Central Bank of Nigeria. All Deposits are insured by the Nigerian Deposit Insurance Corporation (NDIC).</p>
-            </div>
-        </div>
-        <div class="logotype">
-            <svg class="logo-icon logo-icon-2" viewBox="-2.4 -2.4 28.80 28.80" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2 22H22" stroke="#14427b" stroke-width="2.016" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M9.75 4V22H14.25V4C14.25 2.9 13.8 2 12.45 2H11.55C10.2 2 9.75 2.9 9.75 4Z" stroke="#14427b" stroke-width="2.016" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="0.4" d="M3 10V22H7V10C7 8.9 6.6 8 5.4 8H4.6C3.4 8 3 8.9 3 10Z" stroke="#14427b" stroke-width="2.016" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="0.4" d="M17 15V22H21V15C21 13.9 20.6 13 19.4 13H18.6C17.4 13 17 13.9 17 15Z" stroke="#14427b" stroke-width="2.016" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-            <span class="logo-name logo-name-2">Wealth Nexus.</span>
-        </div>
-    </div>
+        <table class="main" align="center">
+
+             <!-- LOGO  -->
+
+            <tr>
+                <td>
+                    <table width="100%" style="background-color: #cccccc; border: none; ">
+                        <tr>
+                            <td class="title">
+                                <div class="logotype">
+                                    <svg class="logo-icon" viewBox="-2.4 -2.4 28.80 28.80" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2 22H22" stroke="#14427b" stroke-width="2.016" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M9.75 4V22H14.25V4C14.25 2.9 13.8 2 12.45 2H11.55C10.2 2 9.75 2.9 9.75 4Z" stroke="#14427b" stroke-width="2.016" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="0.4" d="M3 10V22H7V10C7 8.9 6.6 8 5.4 8H4.6C3.4 8 3 8.9 3 10Z" stroke="#14427b" stroke-width="2.016" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="0.4" d="M17 15V22H21V15C21 13.9 20.6 13 19.4 13H18.6C17.4 13 17 13.9 17 15Z" stroke="#14427b" stroke-width="2.016" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                                    <span class="logo-name">Wealth Nexus.</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <table width="100%">
+                        <tr>
+                            <td class="header">
+                                <div class="notif">
+                                    <h1>Transaction Notification</h1>
+                                    <p>Hi <span>full name</span></p>
+                                    <p> You just made a Transaction of ...</p>
+                                    <p>Love,</p>
+                                    <p>The wealth Nexus Team.</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        
+<!--  social media -->
+
+            <tr>
+                <td>
+                    <table width="100%" style="padding-left: 2rem;">
+                        <tr>
+                            <td class="socials">
+                                <a href=""><img width="32" src="https://firebasestorage.googleapis.com/v0/b/vote-component.appspot.com/o/facebook.png?alt=media&token=831fb175-7028-4f50-addb-51cf67e6917e" alt=""></a>
+                                <a href=""><img width="32" src="https://firebasestorage.googleapis.com/v0/b/vote-component.appspot.com/o/instagram.png?alt=media&token=4f779945-6afa-48bc-b77a-d4df6bc1aa58"alt=""></a>
+                                <a href=""><img width="32" src="https://firebasestorage.googleapis.com/v0/b/vote-component.appspot.com/o/whatsapp-svgrepo-com.svg?alt=media&token=f2699821-b074-4f27-97b3-00bc94ac737b" alt=""></a>
+                                <a href=""><img width="32" src="https://firebasestorage.googleapis.com/v0/b/vote-component.appspot.com/o/twitter.png?alt=media&token=51cb6c50-a69a-4fe5-8f82-903b4d55e17b" alt=""></a>
+                            </td>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <table width="100%" style="padding: 2rem;">
+                        <tr>
+                            <td class="content">
+                                <div class="copyright"> &copy;  2023 Wealth Nexus Ltd (Company No. 11472232). All rights reserved.</div>
+                                <div class="content-details">
+                                    <p>Nigerian banking services offered by Kuda Microfinance Bank (RC796975) with registered address at 151 - Herbert Macaulay Way, Yaba, Lagos, Nigeria. Kuda Microfinance Bank is licensed by the Central Bank of Nigeria. All Deposits are insured by the Nigerian Deposit Insurance Corporation (NDIC).</p>
+                                    <p>Nigerian banking services offered by Kuda Microfinance Bank (RC796975) with registered address at 151 - Herbert Macaulay Way, Yaba, Lagos, Nigeria. Kuda Microfinance Bank is licensed by the Central Bank of Nigeria. All Deposits are insured by the Nigerian Deposit Insurance Corporation (NDIC).</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <table style="padding: 1rem;">
+                        <tr>
+                            <td class="logotype">
+                                <svg class="logo-icon logo-icon-2" viewBox="-2.4 -2.4 28.80 28.80" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2 22H22" stroke="#14427b" stroke-width="2.016" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M9.75 4V22H14.25V4C14.25 2.9 13.8 2 12.45 2H11.55C10.2 2 9.75 2.9 9.75 4Z" stroke="#14427b" stroke-width="2.016" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="0.4" d="M3 10V22H7V10C7 8.9 6.6 8 5.4 8H4.6C3.4 8 3 8.9 3 10Z" stroke="#14427b" stroke-width="2.016" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="0.4" d="M17 15V22H21V15C21 13.9 20.6 13 19.4 13H18.6C17.4 13 17 13.9 17 15Z" stroke="#14427b" stroke-width="2.016" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                                <span class="logo-name logo-name-2">Wealth Nexus.</span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+        </table>
+        
+    </center>
 </body>
 </html>
